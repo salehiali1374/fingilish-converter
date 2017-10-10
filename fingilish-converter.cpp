@@ -3,60 +3,134 @@
 
 using namespace std;
 
-void en_fa_convert(char* str, char* res){
-    while(*str){
-        switch (*str) {
-            case 'a': strcat(res, "ش"); break;
-            case 'b': strcat(res, "ذ"); break;
-            case 'c': strcat(res, "ز"); break;
-            case 'd': strcat(res, "ی"); break;
-            case 'e': strcat(res, "ث"); break;
-            case 'g': strcat(res, "ل"); break;
-            case 'f': strcat(res, "ب"); break;
-            case 'h': strcat(res, "ا"); break;
-            case 'i': strcat(res, "ه"); break;
-            case 'j': strcat(res, "ت"); break;
-            case 'k': strcat(res, "ن"); break;
-            case 'l': strcat(res, "م"); break;
-            case 'm': strcat(res, "پ"); break;
-            case 'n': strcat(res, "د"); break;
-            case 'o': strcat(res, "خ"); break;
-            case 'p': strcat(res, "ح"); break;
-            case 'q': strcat(res, "ض"); break;
-            case 'r': strcat(res, "ق"); break;
-            case 's': strcat(res, "س"); break;
-            case 't': strcat(res, "ف"); break;
-            case 'u': strcat(res, "ع"); break;
-            case 'v': strcat(res, "ر"); break;
-            case 'w': strcat(res, "ص"); break;
-            case 'x': strcat(res, "ط"); break;
-            case 'y': strcat(res, "غ"); break;
-            case 'z': strcat(res, "ظ"); break;
-            case '[': strcat(res, "ج"); break;
-            case ']': strcat(res, "چ"); break;
-            case ';': strcat(res, "ک"); break;
-            case ',': strcat(res, "و"); break;
-            case ' ': strcat(res, " "); break;
-            case '.' : strcat(res, "."); break;
-            case '?' : strcat(res, "؟"); break;
-            case ':' : strcat(res, ":"); break;
-            case '<' : strcat(res, "<"); break;
-            case '>' : strcat(res, ">"); break;
-            case '`' : strcat(res, "`"); break;
-            case '/' : strcat(res, "/"); break;
+
+string en_fa_convert(string str){
+    std::string res = "";
+    for(int i = 0 ; i<str.length(); i++){
+        switch (str[i]) {
+            case 'a':
+                res +="ش";
+                break;
+            case 'b':
+                res +="ذ";
+                break;
+            case 'c':
+                res +="ز";
+                break;
+            case 'd':
+                res +="ی";
+                break;
+            case 'e':
+                res +="ث";
+                break;
+            case 'g':
+                res +="ل";
+                break;
+            case 'f':
+                res +="ب";
+                break;
+            case 'h':
+                res +="ا";
+                break;
+            case 'i':
+                res +="ه";
+                break;
+            case 'j':
+                res +="ت";
+                break;
+            case 'k':
+                res +="ن";
+                break;
+            case 'l':
+                res +="م";
+                break;
+            case 'm':
+                res +="پ";
+                break;
+            case 'n':
+                res +="د";
+                break;
+            case 'o':
+                res +="خ";
+                break;
+            case 'p':
+                res +="ح";
+                break;
+            case 'q':
+                res +="ض";
+                break;
+            case 'r':
+                res +="ق";
+                break;
+            case 's':
+                res +="س";
+                break;
+            case 't':
+                res +="ف";
+                break;
+            case 'u':
+                res +="ع";
+                break;
+            case 'v':
+                res +="ر";
+                break;
+            case 'w':
+                res +="ص";
+                break;
+            case 'x':
+                res +="ط";
+                break;
+            case 'y':
+                res +="غ";
+                break;
+            case 'z':
+                res +="ظ";
+                break;
+            case '[':
+                res +="ج";
+                break;
+            case ']':
+                res +="چ";
+                break;
+            case ';':
+                res +="ک";
+                break;
+            case ',':
+                res +="و";
+                break;
+            case ' ':
+                res +=" ";
+                break;
+            case '.' :
+                res +=".";
+                break;
+            case '?' :
+                res +="؟";
+                break;
+            case ':' :
+                res +=":";
+                break;
+            case '<' :
+                res +="<";
+                break;
+            case '>' :
+                res +=">";
+                break;
+            case '`' :
+                res +="`";
+                break;
+            case '/' :
+                res +="/";
+                break;
         }
-        str++;
     }
+    return res;
 }
 
-const int SIZE = 1000; //length of text
-
 int main(){
-    char* str = new char[SIZE];
-    char* res = new char[SIZE];
-    cout << "enter your text here: ";
-    cin.getline(str, SIZE, '\n');
-    en_fa_convert(str, res);
-    cout << res << endl;
-    delete[] str; delete[] res;
+        std::string string1, result;
+        cout << "Please Enter Your Text:\n";
+        getline(cin, string1);
+        result = en_fa_convert(string1);
+        cout << result << "\n------------------------------------------------------------\n";
 }
